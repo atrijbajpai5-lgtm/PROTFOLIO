@@ -50,20 +50,20 @@ Everything you need to edit is in **`js/config.js`**. Open it in any text editor
 personal: {
   name: "Atrij Bajpai",
   titles: [
-    "Software Engineer",
-    "Full Stack Developer",
-    "Problem Solver"
+    "Aspiring Software Engineer",
+    "Python & Java Learner",
+    "Quick & Curious Learner"
   ],
-  tagline: "Crafting scalable software and elegant user experiences.",
+  tagline: "Driven aspiring engineer actively mastering Python & Java fundamentals.",
   location: "India",
-  email: "your.real.email@example.com", // <-- Your email
+  email: "atrijbajpai5@gmail.com",
+  phone: "+91 9198766183",
   resumeUrl: "assets/resume.pdf"
 },
 socials: {
-  github: "https://github.com/your-username",
-  linkedin: "https://linkedin.com/in/your-profile",
-  twitter: "https://twitter.com/your-handle",
-  leetcode: "https://leetcode.com/your-username"
+  github: "https://github.com/atrijbajpai",
+  linkedin: "https://linkedin.com/in/atrijbajpai",
+  emailDirect: "mailto:atrijbajpai5@gmail.com"
 }
 ```
 

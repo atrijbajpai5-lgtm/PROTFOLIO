@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initContactForm(portfolioConfig.personal.email, portfolioConfig.contact.formspreeUrl);
   initHelperModal();
   initTiltEffect();
+  initCyberDomeCanvas();
 });
 
 /* ==========================================================================
@@ -246,7 +247,7 @@ function renderSkills(skills) {
   if (!container || !skills) return;
 
   container.innerHTML = skills.map(cat => `
-    <div class="skill-category-card">
+    <div class="skill-category-card hud-card">
       <h3 class="category-title">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="4 17 10 11 4 5"></polyline>
@@ -285,7 +286,7 @@ function filterAndDisplayProjects(category) {
     : allProjectsData.filter(p => p.category.toLowerCase() === category.toLowerCase());
 
   container.innerHTML = filtered.map(p => `
-    <div class="project-card" data-category="${p.category}">
+    <div class="project-card hud-card" data-category="${p.category}">
       <div class="project-preview">
         <img src="${p.image}" alt="${p.title}" loading="lazy" />
         ${p.featured ? `<span class="project-featured-badge">Featured</span>` : ""}
@@ -344,7 +345,7 @@ function renderAchievements(achievements) {
   if (!container || !achievements) return;
 
   container.innerHTML = achievements.map(ach => `
-    <div class="achievement-card">
+    <div class="achievement-card hud-card">
       <div class="achievement-top">
         <div class="achievement-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -376,7 +377,7 @@ function renderExperience(experience) {
   container.innerHTML = experience.map(item => `
     <div class="timeline-item">
       <div class="timeline-marker"></div>
-      <div class="timeline-card">
+      <div class="timeline-card hud-card">
         <div class="timeline-header">
           <h3 class="timeline-role">${item.role}</h3>
           <span class="timeline-period">${item.period}</span>
@@ -647,4 +648,149 @@ function initTiltEffect() {
   card.addEventListener("mouseleave", () => {
     card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)";
   });
+}
+
+/* ==========================================================================
+   FUTURISTIC ROBOTIC DOME & CYBER PARTICLES CANVAS
+   ========================================================================== */
+function initCyberDomeCanvas() {
+  const canvas = document.getElementById("cyberDomeCanvas");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+
+  let width = (canvas.width = window.innerWidth);
+  let height = (canvas.height = window.innerHeight);
+
+  window.addEventListener("resize", () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  });
+
+  const mouse = { x: -1000, y: -1000 };
+  window.addEventListener("mousemove", (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  });
+  window.addEventListener("mouseleave", () => {
+    mouse.x = -1000;
+    mouse.y = -1000;
+  });
+
+  // Cyber particle nodes
+  const particleCount = Math.min(50, Math.floor(width / 28));
+  const particles = [];
+  for (let i = 0; i < particleCount; i++) {
+    particles.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: (Math.random() - 0.5) * 0.45,
+      vy: (Math.random() - 0.5) * 0.45,
+      radius: Math.random() * 2 + 1.2,
+      pulse: Math.random() * Math.PI * 2,
+      isCyan: Math.random() > 0.4
+    });
+  }
+
+  function drawDomeHorizon() {
+    const isDark = document.documentElement.getAttribute("data-theme") !== "light";
+    const domeColor = isDark ? "rgba(0, 242, 254, " : "rgba(99, 102, 241, ";
+    const centerX = width / 2;
+    const zenithY = -height * 0.18;
+
+    // Perspective dome meridian rays radiating from zenith
+    ctx.lineWidth = 1;
+    const rayCount = 14;
+    for (let i = 0; i <= rayCount; i++) {
+      const angle = Math.PI * 0.10 + (i / rayCount) * (Math.PI * 0.80);
+      const targetX = centerX + Math.cos(angle) * (width * 0.95);
+      const targetY = height * 0.90;
+
+      const grad = ctx.createLinearGradient(centerX, zenithY, targetX, targetY);
+      grad.addColorStop(0, domeColor + "0.18)");
+      grad.addColorStop(0.45, domeColor + "0.04)");
+      grad.addColorStop(1, "transparent");
+
+      ctx.strokeStyle = grad;
+      ctx.beginPath();
+      ctx.moveTo(centerX, zenithY);
+      ctx.lineTo(targetX, targetY);
+      ctx.stroke();
+    }
+
+    // Concentric dome horizon rings
+    const ringRadii = [height * 0.22, height * 0.42, height * 0.68, height * 1.02];
+    ringRadii.forEach((r, idx) => {
+      ctx.beginPath();
+      ctx.ellipse(centerX, zenithY + 50, r * 1.6, r * 0.62, 0, 0, Math.PI);
+      ctx.strokeStyle = domeColor + (0.09 - idx * 0.018) + ")";
+      ctx.setLineDash([6, 6]);
+      ctx.stroke();
+      ctx.setLineDash([]);
+    });
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+
+    const isDark = document.documentElement.getAttribute("data-theme") !== "light";
+    drawDomeHorizon();
+
+    // Update and draw cyber particles & connection grid
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      p.pulse += 0.025;
+
+      // Wrap around edges
+      if (p.x < 0) p.x = width;
+      if (p.x > width) p.x = 0;
+      if (p.y < 0) p.y = height;
+      if (p.y > height) p.y = 0;
+
+      // Distance to mouse
+      const dxMouse = mouse.x - p.x;
+      const dyMouse = mouse.y - p.y;
+      const distMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
+      const mouseAttract = distMouse < 140 ? (1 - distMouse / 140) * 0.5 : 0;
+
+      // Draw particle node
+      const currentRadius = p.radius + Math.sin(p.pulse) * 0.6 + mouseAttract * 2;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, currentRadius, 0, Math.PI * 2);
+
+      const alpha = 0.35 + Math.sin(p.pulse) * 0.2 + mouseAttract * 0.45;
+      if (p.isCyan) {
+        ctx.fillStyle = isDark ? `rgba(0, 242, 254, ${alpha})` : `rgba(14, 165, 233, ${alpha})`;
+      } else {
+        ctx.fillStyle = isDark ? `rgba(139, 92, 246, ${alpha})` : `rgba(99, 102, 241, ${alpha})`;
+      }
+      ctx.fill();
+
+      // Connect nearby particles with cyber circuit traces
+      for (let j = i + 1; j < particles.length; j++) {
+        const p2 = particles[j];
+        const dx = p.x - p2.x;
+        const dy = p.y - p2.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < 110) {
+          const lineAlpha = (1 - dist / 110) * (isDark ? 0.22 : 0.12);
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(p2.x, p2.y);
+          ctx.strokeStyle = p.isCyan
+            ? `rgba(0, 242, 254, ${lineAlpha})`
+            : `rgba(99, 102, 241, ${lineAlpha})`;
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+      }
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
 }

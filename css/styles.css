@@ -224,6 +224,173 @@ img, svg {
   z-index: 0;
 }
 
+/* ==========================================================================
+   FUTURISTIC ROBOTIC DOME & HORIZON DESIGN SYSTEM
+   ========================================================================== */
+.cyber-dome-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+#cyberDomeCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Futuristic Receding Perspective Dome Arc */
+.futuristic-dome-arc {
+  position: absolute;
+  top: -240px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1350px;
+  height: 580px;
+  border-radius: 50% 50% 0 0;
+  border-top: 2px solid rgba(0, 242, 254, 0.4);
+  box-shadow: 0 -20px 80px rgba(0, 242, 254, 0.16),
+              inset 0 20px 80px rgba(99, 102, 241, 0.14);
+  background: radial-gradient(ellipse at 50% 0%, rgba(0, 242, 254, 0.1) 0%, rgba(99, 102, 241, 0.05) 45%, transparent 75%);
+  pointer-events: none;
+  z-index: 0;
+  animation: domePulse 8s ease-in-out infinite alternate;
+}
+
+.futuristic-dome-arc::before {
+  content: '';
+  position: absolute;
+  top: 45px;
+  left: 70px;
+  right: 70px;
+  bottom: 0;
+  border-radius: 50% 50% 0 0;
+  border-top: 1px dashed rgba(99, 102, 241, 0.35);
+}
+
+.futuristic-dome-arc::after {
+  content: '';
+  position: absolute;
+  top: 95px;
+  left: 150px;
+  right: 150px;
+  bottom: 0;
+  border-radius: 50% 50% 0 0;
+  border-top: 1px solid rgba(0, 242, 254, 0.22);
+}
+
+@keyframes domePulse {
+  0% {
+    box-shadow: 0 -20px 80px rgba(0, 242, 254, 0.16), inset 0 20px 80px rgba(99, 102, 241, 0.14);
+    border-top-color: rgba(0, 242, 254, 0.4);
+  }
+  100% {
+    box-shadow: 0 -25px 100px rgba(0, 242, 254, 0.28), inset 0 30px 100px rgba(99, 102, 241, 0.22);
+    border-top-color: rgba(0, 242, 254, 0.65);
+  }
+}
+
+/* Subtle Futuristic Scanning Light Line */
+.cyber-scanline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, transparent 5%, rgba(0, 242, 254, 0.3) 30%, rgba(99, 102, 241, 0.45) 50%, rgba(0, 242, 254, 0.3) 70%, transparent 95%);
+  box-shadow: 0 0 16px rgba(0, 242, 254, 0.35);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 1;
+  animation: cyberScan 16s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes cyberScan {
+  0% { transform: translateY(-80px); opacity: 0; }
+  10% { opacity: 0.35; }
+  85% { opacity: 0.35; }
+  100% { transform: translateY(105vh); opacity: 0; }
+}
+
+/* Robotic Cyber HUD Corner Brackets for Cards */
+.hud-card {
+  position: relative;
+}
+
+.hud-card::before, .hud-card::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0.65;
+  z-index: 2;
+}
+
+.hud-card::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid #00f2fe;
+  border-left: 2px solid #00f2fe;
+  border-top-left-radius: 4px;
+}
+
+.hud-card::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid #00f2fe;
+  border-right: 2px solid #00f2fe;
+  border-bottom-right-radius: 4px;
+}
+
+.hud-card:hover::before, .hud-card:hover::after {
+  opacity: 1;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.6);
+}
+
+/* Robotic Telemetry Pill Tag */
+.telemetry-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #00f2fe;
+  background: rgba(0, 242, 254, 0.08);
+  border: 1px solid rgba(0, 242, 254, 0.28);
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 0 12px rgba(0, 242, 254, 0.15);
+}
+
+.telemetry-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #00f2fe;
+  box-shadow: 0 0 8px #00f2fe;
+  animation: telemetryPulse 1.8s infinite;
+}
+
+@keyframes telemetryPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.7); }
+}
+
 /* Container */
 .container {
   width: 100%;
@@ -843,8 +1010,19 @@ img, svg {
   border-bottom: 1px solid var(--border-subtle);
 }
 
+#educationList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .edu-item {
   position: relative;
+}
+
+.edu-item:not(:last-child) {
+  padding-bottom: 20px;
+  border-bottom: 1px dashed var(--border-subtle);
 }
 
 .edu-degree {
