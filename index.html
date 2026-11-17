@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <!-- Primary Meta Tags -->
+  <title>Atrij Bajpai | Software Engineer &amp; Full Stack Developer</title>
+  <meta name="title" content="Atrij Bajpai | Software Engineer &amp; Full Stack Developer" />
+  <meta name="description" content="Portfolio of Atrij Bajpai — Software Engineer specializing in modern web development, scalable backend systems, algorithms, and high-performance digital products." />
+  <meta name="keywords" content="Atrij Bajpai, Portfolio, Software Engineer, Full Stack Developer, React, Node.js, Web Development, C++, Python, Data Structures" />
+  <meta name="author" content="Atrij Bajpai" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://atrijbajpai.github.io/" />
+  <meta property="og:title" content="Atrij Bajpai | Software Engineer Portfolio" />
+  <meta property="og:description" content="Crafting scalable software, modern web architectures, and elegant user experiences." />
+  <meta property="og:image" content="assets/avatar.svg" />
+
+  <!-- Twitter Meta -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="Atrij Bajpai | Software Engineer Portfolio" />
+  <meta property="twitter:description" content="Crafting scalable software, modern web architectures, and elegant user experiences." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/avatar.svg" />
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Ambient Background Glow Gradients -->
+  <div class="ambient-glow-wrapper" aria-hidden="true">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <!-- ========================================================================
+       NAVIGATION BAR
+       ======================================================================== -->
+  <header class="site-nav" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand" aria-label="Atrij Bajpai Home">
+        <div class="brand-badge">AB</div>
+        <span class="data-user-name">Atrij Bajpai</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#achievements" class="nav-link">Achievements</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions (Resume, Theme Toggle, Mobile Menu) -->
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle theme">
+          <span id="themeIcon"></span>
+        </button>
+
+        <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm data-resume-link">
+          <span>Resume</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+        </a>
+
+        <button id="mobileToggle" class="mobile-toggle" aria-label="Open mobile menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer">
+      <ul class="mobile-nav-links">
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+        <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+        <li><a href="#achievements" class="mobile-nav-link">Achievements</a></li>
+        <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       HERO SECTION
+       ======================================================================== -->
+  <main>
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Hero Text Content -->
+          <div class="hero-content">
+            <div class="hero-badge-wrap" style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px;">
+              <div class="status-badge">
+                <span class="pulse-dot"></span>
+                <span id="statusBadgeText">Available for Software Roles &amp; Projects</span>
+              </div>
+              <div class="location-badge" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-secondary); background: rgba(255, 255, 255, 0.04); padding: 6px 14px; border-radius: var(--radius-full); border: 1px solid var(--border-subtle);">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span id="heroLocation">India</span>
+              </div>
+            </div>
+
+            <h1 class="hero-title">
+              Hi, I'm <span class="gradient-text data-user-name">Atrij Bajpai</span>
+            </h1>
+
+            <div class="hero-typing-wrap">
+              <span>I build as a&nbsp;</span>
+              <span id="typingText" class="gradient-text">Software Engineer</span>
+              <span class="typing-cursor"></span>
+            </div>
+
+            <p class="hero-desc" id="heroTagline">
+              Crafting scalable software, modern web architectures, and elegant user experiences.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#projects" class="btn btn-primary">
+                <span>View Projects</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+
+              <a href="#contact" class="btn btn-secondary">
+                <span>Get In Touch</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </a>
+
+              <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary data-resume-link">
+                <span>CV / Resume</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Social Links -->
+            <div class="hero-socials" id="heroSocials">
+              <!-- Rendered dynamically from config.js -->
+            </div>
+          </div>
+
+          <!-- Hero Interactive Visual Card -->
+          <div class="hero-visual">
+            <div class="visual-card-wrapper">
+              <div class="visual-ambient-ring"></div>
+              <div class="hero-interactive-card">
+                <div class="card-avatar-wrap">
+                  <img id="heroAvatar" src="assets/avatar.svg" alt="Atrij Bajpai" class="card-avatar" />
+                </div>
+                <!-- Dynamic Quick Stats Grid -->
+                <div class="card-quick-stats" id="quickStatsContainer">
+                  <!-- Rendered dynamically from config.js -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         ABOUT SECTION
+         ======================================================================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">About Me</span>
+          <h2 class="section-title">Engineering with Purpose &amp; Precision</h2>
+          <p class="section-subtitle">A glimpse into my background, engineering philosophy, and academic foundation.</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left: Narrative & Core Pillars -->
+          <div class="about-narrative">
+            <h3 class="about-headline" id="aboutHeadline">
+              Transforming ambitious ideas into performant, elegant digital products.
+            </h3>
+            <div id="aboutNarrative">
+              <!-- Rendered dynamically from config.js -->
+            </div>
+
+            <!-- 4 Pillars Highlights -->
+            <div class="about-highlights-grid" id="aboutHighlights">
+              <!-- Rendered dynamically from config.js -->
+            </div>
+          </div>
+
+          <!-- Right: Education Card -->
+          <div class="about-aside">
+            <div class="education-panel">
+              <div class="panel-header">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+                <span>Education &amp; Background</span>
+              </div>
+              <div id="educationList">
+                <!-- Rendered dynamically from config.js -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SKILLS & TECH STACK SECTION
+         ======================================================================== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Capabilities</span>
+          <h2 class="section-title">Technical Expertise &amp; Tooling</h2>
+          <p class="section-subtitle">Core languages, modern frontend frameworks, backend architectures, and developer tools.</p>
+        </div>
+
+        <div class="skills-grid" id="skillsGridContainer">
+          <!-- Rendered dynamically from config.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         FEATURED PROJECTS SECTION
+         ======================================================================== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Portfolio</span>
+          <h2 class="section-title">Featured Work &amp; Engineering Projects</h2>
+          <p class="section-subtitle">A curated showcase of real-world applications, tools, and technical prototypes.</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="projects-filter-bar">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+          <button class="filter-btn" data-filter="frontend">Frontend</button>
+          <button class="filter-btn" data-filter="backend">Backend &amp; APIs</button>
+          <button class="filter-btn" data-filter="tools">Developer Tools</button>
+        </div>
+
+        <!-- Projects Grid Container -->
+        <div class="projects-grid" id="projectsContainer">
+          <!-- Rendered dynamically from config.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         ACHIEVEMENTS & AWARDS SECTION
+         ======================================================================== -->
+    <section class="section" id="achievements">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Recognition</span>
+          <h2 class="section-title">Achievements &amp; Certifications</h2>
+          <p class="section-subtitle">Hackathon distinctions, competitive coding milestones, and verified credentials.</p>
+        </div>
+
+        <div class="achievements-grid" id="achievementsContainer">
+          <!-- Rendered dynamically from config.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         EXPERIENCE & LEADERSHIP SECTION
+         ======================================================================== -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Career Journey</span>
+          <h2 class="section-title">Experience &amp; Leadership</h2>
+          <p class="section-subtitle">Internships, technical roles, community leadership, and collaborative impact.</p>
+        </div>
+
+        <div class="timeline" id="experienceTimeline">
+          <!-- Rendered dynamically from config.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         CONTACT SECTION
+         ======================================================================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Get in Touch</span>
+          <h2 class="section-title">Let's Connect &amp; Collaborate</h2>
+          <p class="section-subtitle">Whether you have an exciting software role, a project inquiry, or just want to network.</p>
+        </div>
+
+        <div class="contact-wrapper">
+          <div class="contact-grid">
+            
+            <!-- Left Info Pane -->
+            <div class="contact-info-pane">
+              <div>
+                <h3 class="contact-title">Let's build something exceptional together</h3>
+                <p class="contact-desc">
+                  I'm always excited to discuss software engineering roles, open source collaborations, and innovative engineering challenges.
+                </p>
+
+                <div class="contact-methods">
+                  <!-- Email Card -->
+                  <div class="contact-method-card">
+                    <div class="method-icon">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="method-label">Direct Email</div>
+                      <div class="method-val" id="contactEmailVal">atrijbajpai@example.com</div>
+                    </div>
+                    <button class="copy-email-btn" id="copyEmailBtn" title="Copy to clipboard">Copy</button>
+                  </div>
+
+                  <!-- Location Card -->
+                  <div class="contact-method-card">
+                    <div class="method-icon">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="method-label">Location</div>
+                      <div class="method-val" id="contactLocationVal">India</div>
+                    </div>
+                  </div>
+
+                  <!-- Phone Card (Optional) -->
+                  <div class="contact-method-card" id="contactPhoneCard">
+                    <div class="method-icon">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="method-label">Phone</div>
+                      <div class="method-val" id="contactPhoneVal">+91 XXXXXXXXXX</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Social Links in Contact Pane -->
+              <div>
+                <div class="method-label" style="margin-bottom: 12px;">Social &amp; Developer Profiles</div>
+                <div class="hero-socials" id="contactSocials">
+                  <!-- Rendered dynamically from config.js -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Form Pane -->
+            <div class="contact-form-pane">
+              <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                  <label for="formName" class="form-label">Your Name *</label>
+                  <input type="text" id="formName" class="form-input" placeholder="e.g. Alex Smith" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="formEmail" class="form-label">Email Address *</label>
+                  <input type="email" id="formEmail" class="form-input" placeholder="e.g. alex@example.com" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="formSubject" class="form-label">Subject</label>
+                  <input type="text" id="formSubject" class="form-input" placeholder="e.g. Software Engineering Opportunity / Collaboration" />
+                </div>
+
+                <div class="form-group">
+                  <label for="formMessage" class="form-label">Message *</label>
+                  <textarea id="formMessage" class="form-textarea" placeholder="Tell me about your project, role, or proposal..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                  <span>Send Message</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-text">
+        &copy; 2026 <strong class="data-user-name">Atrij Bajpai</strong>. Designed for high performance &amp; clean code.
+      </div>
+      <a href="#hero" class="footer-back-to-top">
+        <span>Back to Top</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="19" x2="12" y2="5"></line>
+          <polyline points="5 12 12 5 19 12"></polyline>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       FLOATING CUSTOMIZATION HELPER PILL & MODAL
+       ======================================================================== -->
+  <button id="openHelperBtn" class="edit-helper-pill" title="Click to see how to customize this website">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 20h9"></path>
+      <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+    </svg>
+    <span>Customize Portfolio Guide</span>
+  </button>
+
+  <div class="helper-modal-overlay" id="helperModal" role="dialog" aria-modal="true" aria-labelledby="helperModalTitle">
+    <div class="helper-modal-box">
+      <button class="modal-close-btn" id="closeHelperBtn" aria-label="Close modal">&times;</button>
+      <h3 id="helperModalTitle" style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 12px; color: var(--text-primary);">
+        How to Update Your Portfolio
+      </h3>
+      <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 20px;">
+        Everything on this site is driven by a single, clean file: <code style="color: var(--primary); background: rgba(99,102,241,0.1); padding: 2px 6px; border-radius: 4px;">js/config.js</code>. You do NOT need to write any complex code.
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 14px; font-size: 0.9rem; color: var(--text-secondary);">
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); padding: 14px; border-radius: var(--radius-md);">
+          <strong style="color: var(--text-primary); display: block; margin-bottom: 4px;">1. Paste Your Links &amp; Profiles</strong>
+          Open <code style="color: var(--text-accent);">js/config.js</code> and update your GitHub, LinkedIn, Twitter, and LeetCode URLs inside the <code style="color: var(--text-accent);">socials: { ... }</code> section.
+        </div>
+
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); padding: 14px; border-radius: var(--radius-md);">
+          <strong style="color: var(--text-primary); display: block; margin-bottom: 4px;">2. Add or Edit Projects</strong>
+          Inside <code style="color: var(--text-accent);">js/config.js</code>, find the <code style="color: var(--text-accent);">projects: [ ... ]</code> array. Replace the titles, descriptions, live demo links, and GitHub repository links with your own work.
+        </div>
+
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); padding: 14px; border-radius: var(--radius-md);">
+          <strong style="color: var(--text-primary); display: block; margin-bottom: 4px;">3. Paste Achievements &amp; Certifications</strong>
+          Find <code style="color: var(--text-accent);">achievements: [ ... ]</code> in <code style="color: var(--text-accent);">js/config.js</code>. Add your hackathon wins, coding contest ranks, and course credentials with verification links.
+        </div>
+
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); padding: 14px; border-radius: var(--radius-md);">
+          <strong style="color: var(--text-primary); display: block; margin-bottom: 4px;">4. Replace Resume PDF</strong>
+          Drop your real PDF into the <code style="color: var(--text-accent);">assets/</code> folder and name it <code style="color: var(--text-accent);">resume.pdf</code> (or paste a Google Drive link in <code style="color: var(--text-accent);">config.js</code>).
+        </div>
+
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); padding: 14px; border-radius: var(--radius-md);">
+          <strong style="color: var(--text-primary); display: block; margin-bottom: 4px;">5. Free 1-Click Hosting</strong>
+          Because this is a 100% static site, you can host it for free on <strong>GitHub Pages</strong>, <strong>Vercel</strong>, or <strong>Netlify</strong> in under 60 seconds. Simply push this folder to a GitHub repo!
+        </div>
+      </div>
+
+      <div style="margin-top: 24px; text-align: right;">
+        <button class="btn btn-primary btn-sm" onclick="document.getElementById('helperModal').classList.remove('open')">Got it!</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="p3Bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090514" />
+      <stop offset="100%" stop-color="#190d34" />
+    </linearGradient>
+    <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="380" rx="16" fill="url(#p3Bg)" />
+  <rect x="1" y="1" width="598" height="378" rx="15" fill="none" stroke="#2e1065" stroke-width="1.5" />
+
+  <!-- Architecture Flow Nodes -->
+  <!-- Gateway Node -->
+  <rect x="50" y="150" width="120" height="80" rx="10" fill="#2e1065" stroke="#a855f7" stroke-width="2" />
+  <text x="110" y="185" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">API Gateway</text>
+  <text x="110" y="205" font-family="monospace" font-size="10" fill="#c084fc" text-anchor="middle">Rate Limiter</text>
+
+  <!-- Connectors -->
+  <path d="M 170 190 L 260 110" stroke="#a855f7" stroke-width="2" stroke-dasharray="6 4" />
+  <path d="M 170 190 L 260 190" stroke="#ec4899" stroke-width="2" />
+  <path d="M 170 190 L 260 270" stroke="#a855f7" stroke-width="2" stroke-dasharray="6 4" />
+
+  <!-- Service Node 1 -->
+  <rect x="260" y="70" width="130" height="70" rx="10" fill="#1e1035" stroke="#7c3aed" stroke-width="1.5" />
+  <text x="325" y="105" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Auth &amp; JWT</text>
+  <text x="325" y="122" font-family="monospace" font-size="10" fill="#9333ea" text-anchor="middle">Service :8001</text>
+
+  <!-- Service Node 2 (Redis) -->
+  <rect x="260" y="155" width="130" height="70" rx="10" fill="#1e1035" stroke="#ec4899" stroke-width="2" />
+  <text x="325" y="190" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#f43f5e" text-anchor="middle">Redis Cluster</text>
+  <text x="325" y="207" font-family="monospace" font-size="10" fill="#fb7185" text-anchor="middle">Token Blacklist</text>
+
+  <!-- Service Node 3 -->
+  <rect x="260" y="240" width="130" height="70" rx="10" fill="#1e1035" stroke="#7c3aed" stroke-width="1.5" />
+  <text x="325" y="275" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Core Microservice</text>
+  <text x="325" y="292" font-family="monospace" font-size="10" fill="#9333ea" text-anchor="middle">Service :8002</text>
+
+  <!-- Output Database Node -->
+  <path d="M 390 190 L 460 190" stroke="#ec4899" stroke-width="2" />
+  <rect x="460" y="145" width="100" height="90" rx="12" fill="#3b0764" stroke="#d946ef" stroke-width="2" />
+  <ellipse cx="510" cy="165" rx="35" ry="10" fill="#581c87" stroke="#d946ef" stroke-width="1" />
+  <text x="510" y="200" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">PostgreSQL</text>
+  <text x="510" y="218" font-family="monospace" font-size="10" fill="#e879f9" text-anchor="middle">Partitioned</text>
+
+  <!-- Terminal log footer -->
+  <rect x="50" y="325" width="510" height="30" rx="6" fill="#090514" stroke="#2e1065" />
+  <text x="65" y="344" font-family="monospace" font-size="10" fill="#10b981">✓ [200 OK] Proxy routing latency: 3.4ms | Zero-trust token verified</text>
+</svg>

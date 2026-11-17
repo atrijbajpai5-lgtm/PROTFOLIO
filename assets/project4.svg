@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="p4Bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#041f1a" />
+      <stop offset="100%" stop-color="#022c22" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="380" rx="16" fill="url(#p4Bg)" />
+  <rect x="1" y="1" width="598" height="378" rx="15" fill="none" stroke="#064e3b" stroke-width="1.5" />
+
+  <!-- Graph / Tree Visualization -->
+  <!-- Controls bar -->
+  <rect x="40" y="30" width="520" height="40" rx="8" fill="#064e3b" />
+  <text x="60" y="55" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#34d399">ALGO: DIJKSTRA / A*</text>
+  <rect x="220" y="38" width="70" height="24" rx="4" fill="#047857" />
+  <text x="255" y="54" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#ffffff" text-anchor="middle">PLAY</text>
+  <rect x="300" y="38" width="70" height="24" rx="4" fill="#065f46" />
+  <text x="335" y="54" font-family="'Inter', sans-serif" font-size="11" fill="#a7f3d0" text-anchor="middle">RESET</text>
+  <text x="490" y="55" font-family="monospace" font-size="12" fill="#6ee7b7">SPEED: 60 FPS</text>
+
+  <!-- Graph Connections -->
+  <line x1="140" y1="140" x2="280" y2="110" stroke="#10b981" stroke-width="3" />
+  <line x1="140" y1="140" x2="190" y2="240" stroke="#059669" stroke-width="2" />
+  <line x1="280" y1="110" x2="420" y2="140" stroke="#10b981" stroke-width="3" />
+  <line x1="280" y1="110" x2="330" y2="230" stroke="#047857" stroke-width="2" />
+  <line x1="190" y1="240" x2="330" y2="230" stroke="#047857" stroke-width="2" />
+  <line x1="330" y1="230" x2="470" y2="240" stroke="#10b981" stroke-width="3" />
+  <line x1="420" y1="140" x2="470" y2="240" stroke="#10b981" stroke-width="3" />
+
+  <!-- Graph Nodes -->
+  <!-- Node Start -->
+  <circle cx="140" cy="140" r="24" fill="#059669" stroke="#34d399" stroke-width="3" />
+  <text x="140" y="145" font-family="monospace" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">START</text>
+
+  <!-- Node B -->
+  <circle cx="280" cy="110" r="22" fill="#10b981" stroke="#a7f3d0" stroke-width="3" />
+  <text x="280" y="115" font-family="monospace" font-size="12" font-weight="700" fill="#064e3b" text-anchor="middle">B (4)</text>
+
+  <!-- Node C -->
+  <circle cx="190" cy="240" r="20" fill="#064e3b" stroke="#047857" stroke-width="2" />
+  <text x="190" y="245" font-family="monospace" font-size="11" fill="#6ee7b7" text-anchor="middle">C (8)</text>
+
+  <!-- Node D -->
+  <circle cx="330" cy="230" r="20" fill="#064e3b" stroke="#047857" stroke-width="2" />
+  <text x="330" y="235" font-family="monospace" font-size="11" fill="#6ee7b7" text-anchor="middle">D (11)</text>
+
+  <!-- Node E -->
+  <circle cx="420" cy="140" r="22" fill="#10b981" stroke="#a7f3d0" stroke-width="3" />
+  <text x="420" y="145" font-family="monospace" font-size="12" font-weight="700" fill="#064e3b" text-anchor="middle">E (7)</text>
+
+  <!-- Target Node -->
+  <circle cx="470" cy="240" r="26" fill="#f59e0b" stroke="#fde68a" stroke-width="3" />
+  <text x="470" y="245" font-family="monospace" font-size="12" font-weight="700" fill="#064e3b" text-anchor="middle">GOAL</text>
+
+  <!-- Info pill -->
+  <rect x="40" y="315" width="520" height="35" rx="8" fill="#022c22" stroke="#047857" />
+  <text x="55" y="337" font-family="monospace" font-size="11" fill="#34d399">Shortest path identified in O((V + E) log V): [START → B → E → GOAL] | Total Cost: 12</text>
+</svg>
